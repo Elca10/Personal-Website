@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profileImg from "../images/profile.jpg";
+import profileImg from "../images/profile2.jpeg";
 
 const sectionVariants = {
   hidden: { opacity: 0, x: -40 },
@@ -23,7 +23,7 @@ export default function Home() {
 
           <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="flex-1">
             <h1 className="text-4xl font-bold mb-2 text-primary">Oh hello there!</h1>
-            <p className="text-gray-300 mb-6">I'm Eliška. Keep exploring to learn a bit more about me, at your own risk.</p>
+            <p className="text-gray-300 mb-6">I'm Eliška. Welcome to my little corner of the internet!</p>
           </motion.div>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function Home() {
               <h3 className="text-2xl font-mono tracking-wide uppercase text-center" style={{ color: 'var(--primary)' }}>2 SENTENCES</h3>
             </div>
             <div className="flex-1 text-left">
-              <p className="text-xl text-gray-300">I'm a relentless creator at the intersection of computer science and business, driven to turn ideas into impact. I'm an outdoorsy go-getter and electric bass guitarist in my free time.</p>
+              <p className="text-xl text-gray-300">I'm a relentless creator at the intersection of computer science and business, driven by growth and sustained by creation. I'm an outdoorsy go-getter and electric bass guitarist in my free time.</p>
             </div>
           </motion.div>
         </div>
