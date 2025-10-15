@@ -51,9 +51,9 @@ body {
 
 /* Red glassy card variant for highlighted sections */
 .glass-red {
-  /* subtler red glass: low-opacity fill and softer outline to avoid large color shifts */
-  background: rgba(214,40,40,0.06);
-  border: 1px solid rgba(214,40,40,0.18);
+  /* slightly stronger red glass for Home panels */
+  background: rgba(214,40,40,0.14);
+  border: 1px solid rgba(214,40,40,0.28);
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 6px 18px rgba(0,0,0,0.55);

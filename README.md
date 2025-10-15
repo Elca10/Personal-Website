@@ -2,6 +2,8 @@
 
 This repository contains a personal website built with React, Vite, and Tailwind CSS. It is a data-driven site where project and other pages are populated from simple JS data files in `src/data/` and rendered with reusable React components.
 
+NOTE: The code architecture, design, and content are entirely my own work. I created the non-intellectually dense components (i.e. a lot of the code) with the help of AI. 
+
 ## Purpose
 
 This is Eliska Jelinek's personal website. All text, images, and other content in this repository are the property of Eliska unless otherwise noted.
