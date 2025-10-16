@@ -1,0 +1,60 @@
+# # # /public_html/eliskaj.com/.htaccess
+# # Options -MultiViews
+# # RewriteEngine On
+
+# # # IMPORTANT: Use a RewriteBase that matches the folder name
+# # RewriteBase /eliskaj.com/
+
+# # # If the request is for an existing file or directory, serve it as is
+# # RewriteCond %{REQUEST_FILENAME} -f [OR]
+# # RewriteCond %{REQUEST_FILENAME} -d
+# # RewriteRule ^ - [L]
+
+# # # Otherwise, serve index.html for client-side routing (React)
+# # RewriteRule ^ index.html [L]
+
+
+
+
+# # RewriteEngine On
+# # RewriteCond %{REQUEST_FILENAME} !-f
+# # RewriteCond %{REQUEST_FILENAME} !-d
+# # RewriteRule . /eliskaj.com/index.html [L]
+
+
+
+# # Remove trailing slashes
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_URI} (.+)/$
+# RewriteRule ^ %1 [R=301,L]
+
+
+# # # Use UTF-8 encoding
+# # AddDefaultCharset UTF-8
+
+# # # Enable Rewrite Engine
+# # RewriteEngine On
+# # RewriteBase /
+
+# # # Send everything to index.html (for React Router)
+# # RewriteCond %{REQUEST_FILENAME} !-f
+# # RewriteCond %{REQUEST_FILENAME} !-d
+# # RewriteRule ^ index.html [L,QSA]
+
+# # # Allow index.html to handle all routes
+# # DirectoryIndex index.html
+
+
+# Remove trailing slashes from URLs
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]
+
+# Serve index.html for React Router (all non-file, non-directory requests)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L,QSA]
+
+# Ensure index.html is used as default for the root
+DirectoryIndex index.html

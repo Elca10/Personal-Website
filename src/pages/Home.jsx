@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profileImg from "../images/profile2.jpeg";
+const profileImg = '/images/profile2.jpeg';
 
 const sectionVariants = {
   hidden: { opacity: 0, x: -40 },

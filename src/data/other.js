@@ -85,11 +85,11 @@ const other = [
     icon: '',
     cards: [
       // Three small vertical series cards (image on top, description below) to be shown in one row
-      { id: 'id-series-1', title: 'Grow Boldly', thumbnail: '/src/images/growBoldly.png', full: '/src/images/profile.jpg', statement: 'My 2023 commitment', layout: 'vertical' },
-      { id: 'id-series-2', title: 'Grow Deeper', thumbnail: '/src/images/growDeeper.png', full: '/src/images/profile.jpg', statement: 'My 2024 commitment', layout: 'vertical' },
-      { id: 'id-series-3', title: 'Grow Stronger', thumbnail: '/src/images/growStronger.png', full: '/src/images/profile.jpg', statement: 'My 2025 commitment', layout: 'vertical' },
+  { id: 'id-series-1', title: 'Grow Boldly', thumbnail: '/images/growBoldly.png', full: '/images/profile.jpg', statement: 'My 2023 commitment', layout: 'vertical' },
+  { id: 'id-series-2', title: 'Grow Deeper', thumbnail: '/images/growDeeper.png', full: '/images/profile.jpg', statement: 'My 2024 commitment', layout: 'vertical' },
+  { id: 'id-series-3', title: 'Grow Stronger', thumbnail: '/images/growStronger.png', full: '/images/profile.jpg', statement: 'My 2025 commitment', layout: 'vertical' },
       // One full-width horizontal card (image left, text right)
-      { id: 'id-feature-1', title: 'Personal Symbol', thumbnail: '/src/images/personalSymbol.png', full: '/src/images/profile.jpg', statement: 'The symbol’s red, black, and white palette reflects my love for simplicity and clean design. Its form resembles a confident figure—arms on hips, heart at center—anchored by a red line that represents both my core values and my own physical backbone. The triangles embody femininity and intellect, while their opposing directions suggest growth and movement. Altogether, it’s a minimal yet deeply personal representation of who I am at my core.', layout: 'horizontal' },
+  { id: 'id-feature-1', title: 'Personal Symbol', thumbnail: '/images/personalSymbol.png', full: '/images/profile.jpg', statement: 'The symbol’s red, black, and white palette reflects my love for simplicity and clean design. Its form resembles a confident figure—arms on hips, heart at center—anchored by a red line that represents both my core values and my own physical backbone. The triangles embody femininity and intellect, while their opposing directions suggest growth and movement. Altogether, it’s a minimal yet deeply personal representation of who I am at my core.', layout: 'horizontal' },
     ],
   },
   {
@@ -98,8 +98,8 @@ const other = [
     description: 'Photography and trip notes.',
     icon: '',
     cards: [
-      { id: 'tr-1', title: 'Trip 1', images: ['/src/images/profile.jpg','/src/images/profile.jpg'] , statement: 'A week in the mountains.'},
-      { id: 'tr-2', title: 'Trip 2', images: ['/src/images/profile.jpg','/src/images/profile.jpg'], statement: 'Coastal sketches.'},
+  { id: 'tr-1', title: 'Trip 1', images: ['/images/profile.jpg','/images/profile.jpg'] , statement: 'A week in the mountains.'},
+  { id: 'tr-2', title: 'Trip 2', images: ['/images/profile.jpg','/images/profile.jpg'], statement: 'Coastal sketches.'},
     ],
   },
 ]

@@ -20,15 +20,15 @@ export default function App() {
   <main className="pt-24 flex-1 pb-12">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<ProjectPage />} />
-          <Route path="/achievements" element={<Achievements />} />
-          <Route path="/other/:id" element={<Other />} />
-          <Route path="/other/achievements" element={<Achievements />} />
-          <Route path="/other/coursework" element={<Coursework />} />
-          <Route path="/other/identity" element={<Identity />} />
-          <Route path="/other" element={<Other />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects/" element={<Projects />} />
+          <Route path="/projects/:id/" element={<ProjectPage />} />
+          <Route path="/achievements/" element={<Achievements />} />
+          <Route path="/other/:id/" element={<Other />} />
+          <Route path="/other/achievements/" element={<Achievements />} />
+          <Route path="/other/coursework/" element={<Coursework />} />
+          <Route path="/other/identity/" element={<Identity />} />
+          <Route path="/other/" element={<Other />} />
+          <Route path="/contact/" element={<Contact />} />
         </Routes>
       </main>
       <Footer />
