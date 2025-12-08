@@ -182,7 +182,7 @@ export function ProjectTemplate({ project }) {
             )
           })()
         )}
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <h1 className="text-2xl font-bold">{project.title}</h1>
           <h2 className="text-sm text-primary mb-2">{project.subtitle}</h2>
           {(project.meta?.year || (project.meta?.tech && project.meta.tech.length > 0)) && (
@@ -211,7 +211,7 @@ export function ProjectTemplate({ project }) {
           )}
 
           {project.links && project.links.length > 0 && (
-            <div className="flex gap-3 mt-4">
+            <div className="flex flex-wrap gap-3 mt-4">
               {project.links.map((l) => (
                 <a key={l.label} href={l.href} className="btn-primary">{l.label}</a>
               ))}
