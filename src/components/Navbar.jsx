@@ -4,17 +4,20 @@ import { Link } from "react-router-dom";
 const dropdownLink = "block px-4 py-2 hover:bg-primary/20";
 
 export default function Navbar() {
+  const [workOpen, setWorkOpen] = useState(false);
   const [projectsOpen, setProjectsOpen] = useState(false);
   const [otherOpen, setOtherOpen] = useState(false);
   const [essaysOpen, setEssaysOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const workTimerRef = useRef(null);
   const projectsTimerRef = useRef(null);
   const otherTimerRef = useRef(null);
   const essaysTimerRef = useRef(null);
 
-  const openProjects = (val) => { setProjectsOpen(val); if (val) { setOtherOpen(false); setEssaysOpen(false); } };
-  const openOther   = (val) => { setOtherOpen(val);    if (val) { setProjectsOpen(false); setEssaysOpen(false); } };
-  const openEssays  = (val) => { setEssaysOpen(val);   if (val) { setProjectsOpen(false); setOtherOpen(false); } };
+  const openWork     = (val) => { setWorkOpen(val);     if (val) { setProjectsOpen(false); setOtherOpen(false); setEssaysOpen(false); } };
+  const openProjects = (val) => { setProjectsOpen(val); if (val) { setWorkOpen(false); setOtherOpen(false); setEssaysOpen(false); } };
+  const openOther    = (val) => { setOtherOpen(val);    if (val) { setWorkOpen(false); setProjectsOpen(false); setEssaysOpen(false); } };
+  const openEssays   = (val) => { setEssaysOpen(val);   if (val) { setWorkOpen(false); setProjectsOpen(false); setOtherOpen(false); } };
 
   const clearTimer = (ref) => { if (ref.current) { clearTimeout(ref.current); ref.current = null; } };
 
@@ -36,6 +39,20 @@ export default function Navbar() {
 
       <ul className="hidden md:flex gap-8 text-sm uppercase font-mono">
         <li><Link to="/">Home</Link></li>
+
+        {/* Work dropdown */}
+        <li className="relative group" {...hoverProps(openWork, workTimerRef)}>
+          <div className="flex items-center gap-2">
+            <Link to="/work" className="hover:underline">Work</Link>
+            <button onClick={() => openWork(!workOpen)} aria-label="Toggle work menu">▾</button>
+          </div>
+          <ul {...hoverProps(openWork, workTimerRef)} className={`absolute left-0 mt-1 bg-black/90 rounded-lg shadow-lg z-50 overflow-hidden ${workOpen ? 'block' : 'hidden'} md:group-hover:block`}>
+            <li><Link className={dropdownLink} to="/work/bass">Bass</Link></li>
+            <li><Link className={dropdownLink} to="/work/z2k">Z2K</Link></li>
+            <li><Link className={dropdownLink} to="/work/laser-sequencer">Laser Sequencer</Link></li>
+            <li><Link className={dropdownLink} to="/work/python-teaching">Python Teaching</Link></li>
+          </ul>
+        </li>
 
         {/* Projects dropdown */}
         <li className="relative group" {...hoverProps(openProjects, projectsTimerRef)}>
@@ -86,6 +103,13 @@ export default function Navbar() {
         >
           <div className="flex flex-col p-4 gap-2">
             <Link to="/" className="block py-2" onClick={() => setMobileOpen(false)}>Home</Link>
+
+            <div className="pt-2 pb-1 font-semibold">Work</div>
+            <Link to="/work" className="block py-2 pl-2" onClick={() => setMobileOpen(false)}>All Work</Link>
+            <Link to="/work/bass" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Bass</Link>
+            <Link to="/work/z2k" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Z2K</Link>
+            <Link to="/work/laser-sequencer" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Laser Sequencer</Link>
+            <Link to="/work/python-teaching" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Python Teaching</Link>
 
             <div className="pt-2 pb-1 font-semibold">Projects</div>
             <Link to="/projects" className="block py-2 pl-2" onClick={() => setMobileOpen(false)}>All Projects</Link>
