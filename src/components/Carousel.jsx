@@ -5,15 +5,16 @@ export default function Carousel({ images = [], maxWidth = 640, onImageClick = n
   const [aspect, setAspect] = useState(16 / 9)
   const imgRef = useRef(null)
 
-  if (!images.length) return null
-
   useEffect(() => {
+    if (!images.length) return
     const img = new Image()
     img.src = images[0]
     img.onload = () => {
       if (img.naturalWidth && img.naturalHeight) setAspect(img.naturalWidth / img.naturalHeight)
     }
   }, [images])
+
+  if (!images.length) return null
 
   const paddingBottom = `${100 / aspect}%` // container uses padding-bottom to reserve aspect ratio
 
