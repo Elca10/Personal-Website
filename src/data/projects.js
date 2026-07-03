@@ -28,43 +28,6 @@ const projects = [
   },
 
   {
-    id: 'bass',
-    title: 'Bass',
-    subtitle: 'Self-taught bassist',
-    description:
-      'A collection of covers, band pages, and other bass-related items.',
-  image: '/images/bass2.jpg',
-    links: [{ href: 'https://www.instagram.com/that_bass_girl_/', label: 'Follow' }],
-    // separated into covers and bands for clearer rendering
-    covers: [
-  { id: 'track-1', title: 'Dean Town', thumbnail: '/images/deanTown.png', href: 'https://www.instagram.com/that_bass_girl_/reel/C8iQdlRyuc3/?hl=en' },
-  { id: 'track-2', title: 'Used to be In love', thumbnail: '/images/usedToBe.png', href: 'https://www.instagram.com/that_bass_girl_/reel/DGdw_rYS-QZ/?hl=en' },
-  { id: 'track-3', title: 'Lose My Cool', thumbnail: '/images/loseMyCool.png', href: 'https://www.instagram.com/that_bass_girl_/reel/C2wmLaMO5n7/?hl=en' },
-  { id: 'track-4', title: 'Boom', thumbnail: '/images/boom.png', href: 'https://www.instagram.com/that_bass_girl_/reel/C7VfWneNld7/?hl=en' },
-    ],
-    photos: [
-  '/images/bass_1.jpg',
-  '/images/bass_2.jpg',
-  '/images/bass_3.jpg',
-  '/images/bass_4.jpg',
-  '/images/bass_5.jpg',
-  '/images/bass_6.jpg',
-  '/images/bass_7.jpg',
-  '/images/bass_8.jpg',
-  '/images/bass_9.jpg',
-  '/images/bass_10.jpg',
-  '/images/bass_11.jpg',
-    ],
-    bands: [
-  { id: 'band-1', title: 'Quick Turnover', thumbnail: '/images/QT.jpg', href: 'https://www.instagram.com/quick.turnover/?hl=en' },
-  { id: 'band-2', title: 'The Airwaves', thumbnail: '/images/airwaves.jpg', href: 'https://www.instagram.com/theairwavesband/?hl=en' },
-  { id: 'band-3', title: 'Planned Obsolescence', thumbnail: '/images/bass.jpg', href: '#' }
-    ],
-    cards: [],
-  meta: { year: '2022-Present', tech: ["@that_bass_girl_ on Insta"] },
-  },
-
-  {
     id: 'z2k',
     title: 'Z2K',
     subtitle: 'Full Stack Developer',

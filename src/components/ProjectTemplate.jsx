@@ -157,7 +157,64 @@
 
 import React, { useState } from 'react'
 import Lightbox from './Lightbox'
-import Carousel from './Carousel'
+
+const isVideo = (src) => /\.(mov|mp4|webm|MOV|MP4)$/i.test(src)
+
+function PhotoCollections({ collections, onImageClick }) {
+  const [openId, setOpenId] = useState(null)
+  return (
+    <div className="space-y-2">
+      {collections.map((col) => {
+        const isOpen = openId === col.id
+        const count = col.photos.length
+        const videoCount = col.photos.filter(isVideo).length
+        const label = videoCount > 0
+          ? `${count - videoCount} photos · ${videoCount} videos`
+          : `${count} photos`
+        return (
+          <div key={col.id} className="border border-gray-700 rounded-lg overflow-hidden">
+            <button
+              onClick={() => setOpenId(isOpen ? null : col.id)}
+              className="w-full flex items-center justify-between px-4 py-3 hover:bg-white/5 transition text-left"
+            >
+              <span className="font-semibold">{col.title}</span>
+              <span className="text-gray-400 text-sm flex items-center gap-2">
+                {label}
+                <span className={`transition-transform duration-200 inline-block ${isOpen ? 'rotate-180' : ''}`}>▾</span>
+              </span>
+            </button>
+            {isOpen && (
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-3 border-t border-gray-700">
+                {col.photos.map((src, i) => (
+                  <button
+                    key={i}
+                    onClick={() => onImageClick(src)}
+                    className="relative block w-full aspect-square overflow-hidden rounded border border-gray-700 hover:border-primary transition"
+                  >
+                    {isVideo(src) ? (
+                      <>
+                        <video src={src} preload="metadata" className="w-full h-full object-cover" />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                          <div className="w-10 h-10 rounded-full bg-black/60 flex items-center justify-center">
+                            <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5 ml-0.5">
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <img src={src} alt={`${col.title} ${i + 1}`} className="w-full h-full object-cover" loading="lazy" />
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
 export function ProjectTemplate({ project }) {
   const [lightSrc, setLightSrc] = useState(null)
@@ -213,7 +270,7 @@ export function ProjectTemplate({ project }) {
           {project.links && project.links.length > 0 && (
             <div className="flex flex-wrap gap-3 mt-4">
               {project.links.map((l) => (
-                <a key={l.label} href={l.href} className="btn-primary">{l.label}</a>
+                <a key={l.label} href={l.href} className="btn-primary" target="_blank" rel="noopener noreferrer">{l.label}</a>
               ))}
             </div>
           )}
@@ -280,7 +337,7 @@ export function ProjectTemplate({ project }) {
           <h3 className="text-lg font-semibold">Bands</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {project.bands.map((b) => (
-              <a key={b.id} href={b.href} className="block border border-gray-700 rounded-lg overflow-hidden hover:border-primary transition">
+              <a key={b.id} href={b.href} target="_blank" rel="noopener noreferrer" className="block border border-gray-700 rounded-lg overflow-hidden hover:border-primary transition bg-white/10 backdrop-blur-md">
                 <div className="p-4 flex justify-center">
                   <img src={b.thumbnail} alt={b.title} className="w-28 h-28 rounded-full object-cover" />
                 </div>
@@ -288,6 +345,29 @@ export function ProjectTemplate({ project }) {
                   <h4 className="font-semibold">{b.title}</h4>
                 </div>
               </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Studio sessions */}
+      {project.studioSessions && project.studioSessions.length > 0 && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Studio Sessions</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {project.studioSessions.map((s) => (
+              <div key={s.id} className="space-y-2">
+                <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-gray-700">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${s.youtubeId}`}
+                    title={s.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+                <p className="text-sm text-gray-400 text-center">{s.title}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -312,11 +392,11 @@ export function ProjectTemplate({ project }) {
         </div>
       )}
 
-      {/* Photos */}
-      {project.photos && project.photos.length > 0 && (
+      {/* Photo collections (grouped folders) */}
+      {project.photoCollections && project.photoCollections.length > 0 && (
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Photos</h3>
-          <Carousel images={project.photos} maxWidth={420} onImageClick={(src) => setLightSrc(src)} />
+          <PhotoCollections collections={project.photoCollections} onImageClick={setLightSrc} />
         </div>
       )}
       {lightSrc && <Lightbox src={lightSrc} alt="art" onClose={() => setLightSrc(null)} />}

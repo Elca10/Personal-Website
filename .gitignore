@@ -22,3 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Video files: GitHub hard-rejects anything over 100MB, and several
+# existing bass-collection videos exceed that. Videos stay on disk (still
+# served by dev/build/media-outbox) but aren't git-tracked — not part of
+# this repo's automated media pipeline for now either. Revisit if/when
+# video support is properly built out (e.g. via Git LFS or re-encoding).
+public/images/**/*.mov
+public/images/**/*.MOV
+public/images/**/*.mp4
+public/images/**/*.webm
+public/images/**/*.m4v
