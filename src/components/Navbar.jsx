@@ -47,10 +47,10 @@ export default function Navbar() {
             <button onClick={() => openWork(!workOpen)} aria-label="Toggle work menu">▾</button>
           </div>
           <ul {...hoverProps(openWork, workTimerRef)} className={`absolute left-0 mt-1 bg-black/90 rounded-lg shadow-lg z-50 overflow-hidden ${workOpen ? 'block' : 'hidden'} md:group-hover:block`}>
-            <li><Link className={dropdownLink} to="/work/bass">Bass</Link></li>
             <li><Link className={dropdownLink} to="/work/z2k">Z2K</Link></li>
             <li><Link className={dropdownLink} to="/work/laser-sequencer">Laser Sequencer</Link></li>
             <li><Link className={dropdownLink} to="/work/python-teaching">Python Teaching</Link></li>
+            <li><Link className={dropdownLink} to="/work/bass">Bass</Link></li>
           </ul>
         </li>
 
@@ -61,9 +61,10 @@ export default function Navbar() {
             <button onClick={() => openProjects(!projectsOpen)} aria-label="Toggle projects menu">▾</button>
           </div>
           <ul {...hoverProps(openProjects, projectsTimerRef)} className={`absolute left-0 mt-1 bg-black/90 rounded-lg shadow-lg z-50 overflow-hidden ${projectsOpen ? 'block' : 'hidden'} md:group-hover:block`}>
-            <li><Link className={dropdownLink} to="/projects/laser-sequencer">Laser Sequencer</Link></li>
             <li><Link className={dropdownLink} to="/projects/security-grader">Security Grader</Link></li>
             <li><Link className={dropdownLink} to="/projects/adl">Analogue Design Lab</Link></li>
+            <li><Link className={dropdownLink} to="/projects/zeona">Zeona</Link></li>
+            <li><Link className={dropdownLink} to="/projects/thought-essays">Thought Essays</Link></li>
             <li><Link className={dropdownLink} to="/projects/art-portfolio">Art Portfolio</Link></li>
           </ul>
         </li>
@@ -106,16 +107,17 @@ export default function Navbar() {
 
             <div className="pt-2 pb-1 font-semibold">Work</div>
             <Link to="/work" className="block py-2 pl-2" onClick={() => setMobileOpen(false)}>All Work</Link>
-            <Link to="/work/bass" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Bass</Link>
             <Link to="/work/z2k" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Z2K</Link>
             <Link to="/work/laser-sequencer" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Laser Sequencer</Link>
             <Link to="/work/python-teaching" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Python Teaching</Link>
+            <Link to="/work/bass" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Bass</Link>
 
             <div className="pt-2 pb-1 font-semibold">Projects</div>
             <Link to="/projects" className="block py-2 pl-2" onClick={() => setMobileOpen(false)}>All Projects</Link>
-            <Link to="/projects/laser-sequencer" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Laser Sequencer</Link>
             <Link to="/projects/security-grader" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Website Security Grader</Link>
             <Link to="/projects/adl" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Analogue Design Lab</Link>
+            <Link to="/projects/zeona" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Zeona</Link>
+            <Link to="/projects/thought-essays" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Thought Essays</Link>
             <Link to="/projects/art-portfolio" className="block py-2 pl-4" onClick={() => setMobileOpen(false)}>Art Portfolio</Link>
 
             <div className="pt-2 pb-1 font-semibold">Other</div>

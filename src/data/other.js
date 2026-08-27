@@ -63,19 +63,34 @@ const other = [
     title: 'Coursework',
     description: 'Selected classes and projects from coursework.',
     icon: '',
-    cards: [
-      { id: 'cs-1', title: 'Data Structures', description: 'Introduction to data structures and analysis of algorithms. Abstract data types, specification and implementation of advanced data structures, theoretical and empirical analysis of recursive and iterative algorithms, software performance evaluation and testing techniques.' },
-      { id: 'cs-2', title: 'Intro to Computer Organization', description: 'Introduction to computer systems: simple instruction set architecture, the hardware needed to implement that architecture, and machine/assembly language programming.' },
-      { id: 'cs-3', title: 'Proj-Based OO Prog and Design', description: 'Object-oriented programming and design with project-based applications. Covers class design, interfaces, inheritance, generics, exceptions, streams, and testing.' },
-      { id: 'cs-4', title: 'Discrete Structures', description: 'Discrete Structures (CSC 248): logic, sets, relations, proof techniques, functions, counting methods, basic graph and tree theory, algorithmic applications of discrete math.' },
-      { id: 'cs-5', title: 'Systems Programming', description: 'Systems Programming (CSC 357): use of the C programming language from a systems perspective, Unix commands and tools, shell scripting, file systems, editors, and system interfaces.' },
-      { id: 'cs-6', title: 'Design & Analysis of Algorithms', description: 'Design & Analysis of Algorithms (often CSC 349): study of algorithmic paradigms (divide & conquer, greedy, dynamic programming), complexity theory, NP-completeness, and advanced topics in pattern matching, file compression, cryptology, exhaustive search, etc.' },
-      { id: 'cs-7', title: 'Intro to Database Systems', description: 'Introduction to Database Systems (CSC 365): fundamentals of database management systems, relational model, entity-relationship modeling, SQL, query processing, and database design and application development.' },
-      { id: 'cs-8', title: 'Software Engineering I', description: 'Software Engineering I: foundations of software engineering principles, covering requirements, design, testing, software lifecycle, documentation, and team processes.' },
-      { id: 'cs-9', title: 'Programming Languages', description: 'Programming Languages (CSC 430): study and comparison of programming paradigms, syntax, semantics, type systems, language features, and design trade-offs.' },
-      { id: 'math-1', title: 'Calculus III', description: 'Calculus III (MATH 143): parametric equations, polar coordinates, vector algebra, multivariable differentiation and integration, infinite series, power series, and Taylor series.' },
-      { id: 'math-2', title: 'Linear Algebra I', description: 'Linear Algebra I (MATH 206): systems of linear equations, vector spaces, matrix operations, determinants, eigenvalues and eigenvectors, linear transformations.' },
-      { id: 'math-3', title: 'Stat Methods for Engineers', description: 'Statistical Methods for Engineers (STAT 312): descriptive and graphical methods; discrete and continuous probability distributions; confidence intervals; hypothesis testing; single-factor ANOVA; regression; introduction to quality control; use of statistical software.' }
+    sections: [
+      {
+        title: 'Computer Science',
+        cards: [
+          { id: 'cs-10', title: 'Artificial Intelligence', description: 'Artificial Intelligence (CSC 480): programs and techniques that characterize artificial intelligence, including problem solving, knowledge representation, reasoning, planning, reasoning under uncertainty, machine learning, and ethics.' },
+          { id: 'cs-11', title: 'Introduction to Operating Systems', description: 'Introduction to Operating Systems (CSC/CPE 453): sequential and multiprogramming operating systems, system calls, scheduling, synchronization, files and storage systems, virtual memory, and security.' },
+          { id: 'cs-1', title: 'Data Structures', description: 'Introduction to data structures and analysis of algorithms. Abstract data types, specification and implementation of advanced data structures, theoretical and empirical analysis of recursive and iterative algorithms, software performance evaluation and testing techniques.' },
+          { id: 'cs-2', title: 'Intro to Computer Organization', description: 'Introduction to computer systems: simple instruction set architecture, the hardware needed to implement that architecture, and machine/assembly language programming.' },
+          { id: 'cs-3', title: 'Proj-Based OO Prog and Design', description: 'Object-oriented programming and design with project-based applications. Covers class design, interfaces, inheritance, generics, exceptions, streams, and testing.' },
+          { id: 'cs-4', title: 'Discrete Structures', description: 'Discrete Structures (CSC 248): logic, sets, relations, proof techniques, functions, counting methods, basic graph and tree theory, algorithmic applications of discrete math.' },
+          { id: 'cs-5', title: 'Systems Programming', description: 'Systems Programming (CSC 357): use of the C programming language from a systems perspective, Unix commands and tools, shell scripting, file systems, editors, and system interfaces.' },
+          { id: 'cs-6', title: 'Design & Analysis of Algorithms', description: 'Design & Analysis of Algorithms (often CSC 349): study of algorithmic paradigms (divide & conquer, greedy, dynamic programming), complexity theory, NP-completeness, and advanced topics in pattern matching, file compression, cryptology, exhaustive search, etc.' },
+          { id: 'cs-7', title: 'Intro to Database Systems', description: 'Introduction to Database Systems (CSC 365): fundamentals of database management systems, relational model, entity-relationship modeling, SQL, query processing, and database design and application development.' },
+          { id: 'cs-8', title: 'Software Engineering I', description: 'Software Engineering I: foundations of software engineering principles, covering requirements, design, testing, software lifecycle, documentation, and team processes.' },
+          { id: 'cs-9', title: 'Programming Languages', description: 'Programming Languages (CSC 430): study and comparison of programming paradigms, syntax, semantics, type systems, language features, and design trade-offs.' },
+        ],
+      },
+      {
+        title: 'Mathematics',
+        cards: [
+          { id: 'math-1', title: 'Calculus III', description: 'Calculus III (MATH 143): parametric equations, polar coordinates, vector algebra, multivariable differentiation and integration, infinite series, power series, and Taylor series.' },
+          { id: 'math-2', title: 'Linear Algebra I', description: 'Linear Algebra I (MATH 206): systems of linear equations, vector spaces, matrix operations, determinants, eigenvalues and eigenvectors, linear transformations.' },
+          { id: 'math-3', title: 'Stat Methods for Engineers', description: 'Statistical Methods for Engineers (STAT 312): descriptive and graphical methods; discrete and continuous probability distributions; confidence intervals; hypothesis testing; single-factor ANOVA; regression; introduction to quality control; use of statistical software.' },
+          { id: 'math-4', title: 'Linear Algebra II', description: 'Linear Algebra II (MATH 306): rigorous development of real and complex vector spaces, including infinite dimensional spaces, subspaces, bases, products and direct sums, linear transformations, similarity, eigenvalues, eigenvectors and diagonalization, characteristic and minimal polynomials, and the Cayley-Hamilton theorem.' },
+          { id: 'math-5', title: 'Game Theory', description: 'Game Theory (MATH 437): mathematical concepts, techniques, and models used to investigate strategies in competitive situations, matrix games, linear programming, nonzero sum games, evolutionarily stable systems, indices of power, and Nash arbitration.' },
+          { id: 'math-6', title: 'Methods of Proof', description: 'Methods of Proof (MATH 248): set theory, logic, quantified statements, indexed sets. Methods of proof: direct, contrapositive, contradiction, mathematical induction. Equivalence relations and partitions, functions, cardinality, and countable/uncountable sets.' },
+        ],
+      },
     ],
   },
   {

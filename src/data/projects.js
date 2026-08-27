@@ -1,33 +1,5 @@
 const projects = [
   {
-    id: 'laser-sequencer',
-    title: 'Laser Sequencer',
-    subtitle: 'Full Stack Developer Intern @ ELI Beamlines',
-    description:
-      "As an intern abroad in Prague, I implemented a state machine with a web interface at the ELI Beamlines facility—home to some of the most powerful lasers in the world. I used React, Python, and SQL to build a laser sequencer that helps operators monitor and control live laser research experiments. I gained experience with helper libraries, including SQLAlchemy, FastAPI, and asyncio (for asynchronous programming). \n\nThis international experience pushed me to collaborate across cultures and technical disciplines. I worked closely with physicists and engineers from around the world, learning how to adapt quickly, communicate clearly, and contribute effectively in a multilingual, high-complexity research setting. Living and working abroad made me a more adaptable, self-directed, and globally minded developer.",
-  image: '/images/laserSequencer.jpg',
-    links: [
-      { href: 'https://www.eli-beams.eu/', label: 'ELI Beamlines' },
-    ],
-  meta: { year: 'June-September 2025', tech: ['Python', 'React', 'SQL', 'EPIC', 'Async Programming'] },
-    cards: [],
-  },
-
-  {
-    id: 'adl',
-    title: 'Analogue Design Lab (ADL)',
-    subtitle: 'Business Lead and Founding Member',
-    description:
-      "(ADL is a student-run club at Cal Poly SLO focused on design competitions and product development.) Responsible for industry outreach and managing media strategy to enhance the club's visibility and engagement. Spearheading the brand kit creation and launching the club’s media presence. Quadrupled club member count and organized a 6 week speaker series with design experts from across North America.",
-  image: '/images/adl.png',
-    links: [
-      { href: 'https://www.analogue.design/', label: 'Website' }, { href: 'https://www.instagram.com/analogue.design.lab/', label: 'Insta' }, { href: 'https://linktree.analogue.design/', label: 'LinkedIn' }, { href: '#', label: 'LinkTree' }
-    ],
-  meta: { year: '2023-Present', tech: ['Outreach','Media','Design'] },
-    cards: [],
-  },
-
-  {
     id: 'z2k',
     title: 'Z2K',
     subtitle: 'Full Stack Developer',
@@ -52,6 +24,47 @@ const projects = [
   { id: 'ss-2', title: 'Miro Board', thumbnail: '/images/miro.png', href: 'https://miro.com/app/board/uXjVLRNimtc=/' },
     ],
   meta: { year: '2024-Present', tech: ['[In progress]'] },
+  },
+
+  {
+    id: 'zeona',
+    title: 'Zeona',
+    subtitle: 'Personal Automation System — Architect & Developer',
+    description:
+      "Zeona is a privacy-first, multi-agent automation system I designed and built for my own daily use: a set of specialized AI agent personas (calendar management, software development, career prep, study support, and general coordination) that collaborate on real tasks, backed by a Node/React web dashboard for monitoring and control.\n\nIt's built on Anthropic's Claude Agent SDK, with Python powering agent logic and a Node/React frontend for the dashboard.\n\nZeona is an ongoing personal project and a real testbed for multi-agent architecture, tool-use design, and human-in-the-loop autonomy patterns.",
+    image: '',
+    links: [],
+    meta: { year: '2026-Present', tech: ['Python', 'React', 'Node.js', 'Claude Agent SDK', 'Multi-Agent Systems'] },
+    cards: [],
+  },
+
+  {
+    id: 'thought-essays',
+    title: 'Thought Essays',
+    subtitle: 'Personal Writing Blog — Design & Development',
+    description:
+      "A dedicated long-form writing blog I designed and built, hosted separately at thoughts.eliskaj.com. It's where I publish essays and reflections that sit outside the scope of my main portfolio site.",
+    image: '',
+    links: [
+      { href: 'https://thoughts.eliskaj.com', label: 'Visit Site' },
+      { href: 'https://github.com/Elca10/thought_essays', label: 'Repo' },
+    ],
+    meta: { year: '2026-Present', tech: ['Eleventy', 'GitHub Pages', 'GoatCounter'] },
+    cards: [],
+  },
+
+  {
+    id: 'adl',
+    title: 'Analogue Design Lab (ADL)',
+    subtitle: 'Business Lead and Founding Member',
+    description:
+      "(ADL is a student-run club at Cal Poly SLO focused on design competitions and product development.) Responsible for industry outreach and managing media strategy to enhance the club's visibility and engagement. Spearheading the brand kit creation and launching the club’s media presence. Quadrupled club member count and organized a 6 week speaker series with design experts from across North America.",
+  image: '/images/adl.png',
+    links: [
+      { href: 'https://www.analogue.design/', label: 'Website' }, { href: 'https://www.instagram.com/analogue.design.lab/', label: 'Insta' }, { href: 'https://linktree.analogue.design/', label: 'LinkedIn' }, { href: '#', label: 'LinkTree' }
+    ],
+  meta: { year: '2023-Present', tech: ['Outreach','Media','Design'] },
+    cards: [],
   },
 
   {
