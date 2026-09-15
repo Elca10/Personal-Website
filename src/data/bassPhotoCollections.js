@@ -9,7 +9,9 @@
 // ~/Desktop/Coding/PersonalWebsite/bass-photos-archive/ so they stop
 // shipping in the production build; the paths here are stale until/unless
 // this is wired back up. Left in place (not deleted) since
-// scripts/add-media.mjs still reads/writes this file.
+// scripts/add-media.mjs still reads/writes this file — note this comment
+// itself gets wiped on the next `npm run add-media` run, since that script
+// does a full unconditional rewrite of this file; re-add if it matters.
 const bassPhotoCollections = [
   {
     "id": "pc-1",
