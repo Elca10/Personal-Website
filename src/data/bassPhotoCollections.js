@@ -1,6 +1,15 @@
 // Generated/maintained by scripts/add-media.mjs — safe to hand-edit, but new
 // shows dropped in media-inbox/bass are added/appended here rather than in
 // work.js, so the automation never has to touch hand-authored data.
+//
+// 2026-09-15: bassEntry in work.js no longer wires this in (replaced by a
+// flat `favorites` gallery + a `shows` list) — nothing on the live site
+// renders these collections anymore. The actual photo files referenced
+// below were moved out of public/images/ to
+// ~/Desktop/Coding/PersonalWebsite/bass-photos-archive/ so they stop
+// shipping in the production build; the paths here are stale until/unless
+// this is wired back up. Left in place (not deleted) since
+// scripts/add-media.mjs still reads/writes this file.
 const bassPhotoCollections = [
   {
     "id": "pc-1",

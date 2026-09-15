@@ -1,4 +1,11 @@
-import bassPhotoCollections from './bassPhotoCollections.js'
+const bassFavorites = Array.from({ length: 36 }, (_, i) =>
+  `/images/bassFavs/bassFav-${String(i + 1).padStart(2, '0')}.jpg`
+)
+
+// Each show played, newest first. `bands` = who was on stage with her that
+// night (or the band she was performing as); `donatedTo` is left off for
+// shows where nothing was collected for a cause.
+const bassShows = []
 
 const bassEntry = {
   id: 'bass',
@@ -15,7 +22,8 @@ const bassEntry = {
   studioSessions: [
     { id: 'studio-1', title: 'The Airwaves – Studio Session', youtubeId: 'gu6NFmuMKVg' },
   ],
-  photoCollections: bassPhotoCollections,
+  favorites: bassFavorites,
+  shows: bassShows,
   bands: [
     { id: 'band-1', title: 'Inkfish', thumbnail: '/images/inkfish.jpg', href: 'https://www.instagram.com/inkfish.band/' },
     { id: 'band-2', title: 'The Airwaves', thumbnail: '/images/airwaves.jpg', href: 'https://www.instagram.com/theairwavesband/?hl=en' },

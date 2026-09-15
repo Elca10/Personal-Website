@@ -399,6 +399,49 @@ export function ProjectTemplate({ project }) {
           <PhotoCollections collections={project.photoCollections} onImageClick={setLightSrc} />
         </div>
       )}
+
+      {/* Favorites (flat photo gallery) */}
+      {project.favorites && project.favorites.length > 0 && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Favorites</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+            {project.favorites.map((src, i) => (
+              <button
+                key={src}
+                onClick={() => setLightSrc(src)}
+                className="relative block w-full aspect-square overflow-hidden rounded border border-gray-700 hover:border-primary transition"
+              >
+                <img src={src} alt={`${project.title} favorite ${i + 1}`} className="w-full h-full object-cover" loading="lazy" />
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Shows list */}
+      {project.shows && project.shows.length > 0 && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Shows</h3>
+          <div className="space-y-2">
+            {project.shows.map((s, i) => (
+              <div key={i} className="p-3 border border-gray-700 rounded-lg">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <h4 className="font-semibold">{s.name}</h4>
+                  <span className="text-sm text-gray-400">{s.date}</span>
+                </div>
+                <p className="text-sm text-gray-300">
+                  {s.bands}
+                  {s.location && <span className="text-gray-400"> — {s.location}</span>}
+                </p>
+                {s.donatedTo && (
+                  <p className="text-sm text-gray-400">Proceeds donated to {s.donatedTo}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {lightSrc && <Lightbox src={lightSrc} alt="art" onClose={() => setLightSrc(null)} />}
     </div>
   )
